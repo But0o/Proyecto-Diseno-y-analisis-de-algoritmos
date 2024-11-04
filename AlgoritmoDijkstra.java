@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Clase que representa una arista en el grafo
+// Clase que representa una arista en el grafo, indcando el nodo de destino y el peso de la arista
 class Arista {
     int nodo;
     int peso;
@@ -22,10 +22,10 @@ class Grafo {
         }
     }
 
-    // Método para agregar una arista
+    // Método para agregar una arista, indicando origen, destino y peso de la arista
     public void addArista(int origen, int destino, int peso) {
         grafo.get(origen).add(new Arista(destino, peso));
-        grafo.get(destino).add(new Arista(origen, peso)); // Para grafo no dirigido
+        grafo.get(destino).add(new Arista(origen, peso)); // Para grafo dirigido, descomentar la linea
     }
 
     // Método para eliminar un nodo y todas sus aristas adyacentes
@@ -50,11 +50,15 @@ class Grafo {
     // Mostrar vecinos de cada nodo
     public void mostrarVecinos() {
         System.out.println("Vecinos de cada nodo:");
+        //Se itera el grafo en base a cada nodo
         for (int nodo : grafo.keySet()) {
+            //Se crea una lista con los nodos adyacentes a cada nodo iterado
             List<Arista> adyacentes = grafo.get(nodo);
             System.out.print("Nodo " + nodo + ": ");
+            //Si el nodo no tiene vecinos
             if (adyacentes.isEmpty()) {
                 System.out.println("No tiene vecinos");
+                //Si el nodo tiene vecinos
             } else {
                 for (Arista arista : adyacentes) {
                     System.out.print(arista.nodo + " (peso: " + arista.peso + "), ");
