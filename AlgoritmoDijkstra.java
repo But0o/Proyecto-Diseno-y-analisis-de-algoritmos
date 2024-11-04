@@ -25,7 +25,7 @@ class Grafo {
     // Método para agregar una arista, indicando origen, destino y peso de la arista
     public void addArista(int origen, int destino, int peso) {
         grafo.get(origen).add(new Arista(destino, peso));
-        grafo.get(destino).add(new Arista(origen, peso)); // Para grafo dirigido, descomentar la linea
+        grafo.get(destino).add(new Arista(origen, peso)); // Para grafo no dirigido, comentar la linea
     }
 
     // Método para eliminar un nodo y todas sus aristas adyacentes
@@ -84,14 +84,13 @@ public class AlgoritmoDijkstra {
         grafo.addArista(4, 8, 9);
         grafo.addArista(5, 9, 2);
         grafo.addArista(6, 7, 1);
-        grafo.addArista(6, 9, 10);
         grafo.addArista(6, 11, 12);
         grafo.addArista(7, 4, 4);
         grafo.addArista(7, 8, 7);
         grafo.addArista(8, 12, 11);
         grafo.addArista(9, 10, 12);
+        grafo.addArista(9, 6, 10);
         grafo.addArista(10, 11, 22);
-
 
         // Eliminar un nodo y recalcular caminos
         System.out.println("Grafo antes de eliminar el nodo:");
