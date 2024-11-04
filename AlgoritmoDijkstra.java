@@ -27,13 +27,7 @@ class Grafo {
         grafo.get(origen).add(new Arista(destino, peso));
         grafo.get(destino).add(new Arista(origen, peso)); // Para grafo no dirigido
     }
-
-    // Método para eliminar una arista entre dos nodos
-    public void removeArista(int origen, int destino) {
-        grafo.get(origen).removeIf(arista -> arista.nodo == destino);
-        grafo.get(destino).removeIf(arista -> arista.nodo == origen); // Para grafo no dirigido
-    }
-
+    
     // Método para eliminar un nodo y todas sus aristas adyacentes
     public void removeNodo(int nodo) {
         if (!grafo.containsKey(nodo)) {
