@@ -72,7 +72,7 @@ class Grafo {
 // Clase principal que implementa el algoritmo de Dijkstra
 public class AlgoritmoDijkstra {
     public static void main(String[] args) {
-        int n = 9; // Número de nodos en el grafo (1 a 12)
+        int n = 9; // Número de nodos en el grafo
         Grafo grafo = new Grafo(n);
 
 
