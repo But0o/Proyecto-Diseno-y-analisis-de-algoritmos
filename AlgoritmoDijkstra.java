@@ -107,9 +107,9 @@ public class AlgoritmoDijkstra {
         ejecutarDijkstra(grafo, 1, n);
         grafo.mostrarVecinos();
 
-        // Eliminar el nodo 7 y todas sus aristas adyacentes
+        // Eliminar el nodo y todas sus aristas adyacentes
         //grafo.removeNodo(7);
-        System.out.println("\nGrafo después de eliminar el nodo 7:");
+        System.out.println("\nGrafo después de eliminar el nodo :");
         ejecutarDijkstra(grafo, 1, n);
         System.out.println();
         grafo.mostrarVecinos();
