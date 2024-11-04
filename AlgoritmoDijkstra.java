@@ -27,7 +27,7 @@ class Grafo {
         grafo.get(origen).add(new Arista(destino, peso));
         grafo.get(destino).add(new Arista(origen, peso)); // Para grafo no dirigido
     }
-    
+
     // Método para eliminar un nodo y todas sus aristas adyacentes
     public void removeNodo(int nodo) {
         if (!grafo.containsKey(nodo)) {
@@ -73,37 +73,30 @@ public class AlgoritmoDijkstra {
 
         // Agregar aristas al grafo
         grafo.addArista(1, 2, 10);
-        grafo.addArista(1, 6, 5);
-        grafo.addArista(1, 7, 18);
-        grafo.addArista(2, 7, 1);
-        grafo.addArista(2, 3, 5);
-        grafo.addArista(3, 4, 1);
-        grafo.addArista(3, 7, 3);
-        grafo.addArista(4, 5, 5);
-        grafo.addArista(5, 6, 9);
-        grafo.addArista(5, 8, 5);
-        grafo.addArista(6, 8, 6);
-        grafo.addArista(6, 7, 7);
-        grafo.addArista(7, 8, 1);
-        grafo.addArista(8, 9, 10);
-        grafo.addArista(9, 4, 15);
-        grafo.addArista(9, 3, 2);
-        grafo.addArista(9, 7, 6);
-        grafo.addArista(9, 10, 3);
-        grafo.addArista(10, 4, 7);
-        grafo.addArista(11, 5, 2);
-        grafo.addArista(11, 8, 9);
-        grafo.addArista(12, 6, 4);
-        grafo.addArista(12, 3, 8);
+        grafo.addArista(1, 5, 1);
+        grafo.addArista(2, 3, 4);
+        grafo.addArista(2, 7, 7);
+        grafo.addArista(3, 7, 8);
+        grafo.addArista(4, 8, 9);
+        grafo.addArista(5, 9, 2);
+        grafo.addArista(6, 7, 1);
+        grafo.addArista(6, 9, 10);
+        grafo.addArista(6, 11, 12);
+        grafo.addArista(7, 4, 4);
+        grafo.addArista(7, 8, 7);
+        grafo.addArista(8, 12, 11);
+        grafo.addArista(9, 10, 12);
+        grafo.addArista(10, 11, 22);
+
 
         // Eliminar un nodo y recalcular caminos
         System.out.println("Grafo antes de eliminar el nodo:");
         ejecutarDijkstra(grafo, 1, n);
         grafo.mostrarVecinos();
 
-        // Eliminar el nodo y todas sus aristas adyacentes
-        //grafo.removeNodo(7);
-        System.out.println("\nGrafo después de eliminar el nodo :");
+        // Eliminar el nodo 7 y todas sus aristas adyacentes
+        //grafo.removeNodo(5);
+        System.out.println("\nGrafo después de eliminar el nodo 7:");
         ejecutarDijkstra(grafo, 1, n);
         System.out.println();
         grafo.mostrarVecinos();
